@@ -1,0 +1,39 @@
+.comp-section-01{
+  padding:150px 0;
+  .c-wrapper{
+    .c-container-01{
+      display: flex;
+      align-items: center;
+      margin-bottom: 48px;
+      .c-item-01{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: #000000;
+        margin-right: 8px;
+      }
+      .c-item-02{
+        cursor: pointer;
+      }
+    }
+    .c-container-02{
+      display: flex;
+      flex-wrap: wrap;
+
+      >:nth-child(2n){
+      margin-right: 0;
+    }
+    }
+
+    .modal-body{
+      .rdb-A{
+        margin-bottom: 6px;
+      }
+        >:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

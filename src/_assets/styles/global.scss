@@ -1,0 +1,24 @@
+$mq-xs1: 0;
+$mq-xs2: 420;
+$mq-sm1: 768;
+$mq-sm2: 1024;
+$mq-md: 1320;
+$mq-lg: 1680;
+$mq-xl: 1920;
+
+$c-wrapper-xs1-width: calc(100% - 40px);
+$c-wrapper-xs2-width: calc(100% - 40px);
+$c-wrapper-sm1-width: 768;
+$c-wrapper-sm2-width: 1024;
+$c-wrapper-md-width: 1320;
+$c-wrapper-lg-width: 1320;
+$c-wrapper-xl-width: 1320;
+
+@mixin prm-font-face-mixin-1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: normal;
+  line-height: normal;
+}

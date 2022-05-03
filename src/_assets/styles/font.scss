@@ -1,0 +1,19 @@
+@import "./global";
+/* Primary font-face */
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/Roboto/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/Roboto/Roboto-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  @include prm-font-face-mixin-1;
+  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
