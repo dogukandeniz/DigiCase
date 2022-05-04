@@ -4,9 +4,9 @@ import './Card.scss';
 
 const Card = (props:any) : JSX.Element =>  {
 debugger;
-    return  props.data && props.data.map((post:any) => {
+    return  props.data && props.data.map((post:any,index:number) => {
             return(
-                <div className="comp-card-01">
+                <div key={index} className="comp-card-01">
                     <div className="c-item-01">
                         <img src={post.image} />
                     </div>

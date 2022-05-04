@@ -8,7 +8,7 @@ import Card from './_components/Card/Card'
 import Modal from './_components/Modal/Modal'
 
 import {
-    useQuery
+    useQuery,
 } from "@apollo/client";
 
 import {GET_POSTS}  from './_queries/getPosts'
@@ -23,23 +23,26 @@ const App = () => {
     const isOpen =useSelector((state: any) => {
        return state.modal.isOpen;
     })
+    const changeCharacter = (e:any) => {
+        setResults([]);
+        setCharacterType(e.target.value)
+        setPage(1);
+
+    }
 
     useQuery(
         GET_POSTS,
         { variables: { page: page,name:characterType },
+            fetchPolicy:"cache-and-network",
             onCompleted: data => {
+            debugger
+
                 setResults(prevState => [...prevState,...data.characters.results]);
+                console.log(data.characters.results)
             },
         });
 
-    const changeCharacter = (e:any) => {
-        setPage(1);
-        setResults([]);
-        setCharacterType(e.target.value)
-        setTimeout(() => {
-            dispatch(modalActions.openOrClose())
-        },500)
-    }
+
 
 
 
@@ -61,7 +64,7 @@ const App = () => {
       <section className="comp-section-01">
         <div className="c-wrapper">
           <div className="c-container-01">
-            <h2 className="c-item-01">Rick and Morty</h2>
+            <h2 className="c-item-01">{characterType !== "" ? characterType.charAt(0).toUpperCase() + characterType.slice(1) : "Rick and Morty" }</h2>
             <button onClick={() => dispatch(modalActions.openOrClose())} className="c-item-02">
             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.5 23.8334L1.54071 5.95837L21.4593 5.95837L11.5 23.8334Z" fill="#C4C4C4"/>
